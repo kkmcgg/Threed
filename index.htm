@@ -1,0 +1,75 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Sanoke Three.js CLI</title>
+    <style>
+        body {
+            margin: 0;
+            overflow: hidden; /* Prevent scrollbars */
+            font-family: monospace;
+            background-color: #111; /* Fallback background */
+            color: #eee;
+            display: flex;
+            flex-direction: column;
+            height: 100vh;
+        }
+        #three-canvas-container {
+            flex-grow: 1; /* Canvas takes available space */
+            position: relative; /* For potential overlays if needed */
+        }
+        #three-canvas {
+            display: block; /* Remove extra space below canvas */
+        }
+        #cli-container {
+            background-color: #222;
+            padding: 10px;
+            border-top: 1px solid #444;
+            display: flex;
+            flex-direction: column;
+            max-height: 200px; /* Limit CLI height */
+        }
+        #cli-output {
+            flex-grow: 1;
+            overflow-y: auto; /* Scroll if output is long */
+            padding-bottom: 5px;
+            white-space: pre-wrap; /* Allow wrapping for long lines */
+            font-size: 0.9em;
+        }
+        #cli-input-container {
+            display: flex;
+        }
+        #cli-input-container span {
+            padding-right: 5px;
+        }
+        #cli-input {
+            flex-grow: 1;
+            background-color: #333;
+            color: #lime;
+            border: 1px solid #555;
+            padding: 5px;
+            font-family: monospace;
+        }
+        #cli-input:focus {
+            outline: none;
+            border-color: #lime;
+        }
+    </style>
+</head>
+<body>
+    <div id="three-canvas-container">
+        <!-- Canvas will be inserted here by Three.js -->
+    </div>
+    <div id="cli-container">
+        <div id="cli-output">Welcome to Sanoke CLI! Type 'help' for commands.</div>
+        <div id="cli-input-container">
+            <span>></span>
+            <input type="text" id="cli-input" autofocus>
+        </div>
+    </div>
+
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/three.js/r128/three.min.js"></script>
+    <script src="script.js"></script>
+</body>
+</html>
